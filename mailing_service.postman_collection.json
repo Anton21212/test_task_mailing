@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "c891b560-63c6-49ae-b938-024e9f4eca3b",
+		"name": "mailing_service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Клиенты",
+			"item": [
+				{
+					"name": "Создание клиента",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": 79539476784,\n    \"mobile_operator_code\": 953,\n    \"sex\": \"W\",\n    \"tag\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/mailing/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mailing",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение клиента",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/mailing/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mailing",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение клиентов",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/mailing/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mailing",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Рассылки",
+			"item": [
+				{
+					"name": "Создание рассылки",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Привет\",\n    \"start_datetime\": \"2022-10-30T00:00:00\",\n    \"end_datetime\": \"2022-10-31T12:00:00\",\n    \"client_sex_filter\": \"M\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/mailing/mailings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mailing",
+								"mailings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение рассылок",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/mailing/mailings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mailing",
+								"mailings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение рассылки",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/mailing/mailings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mailing",
+								"mailings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
