@@ -20,6 +20,15 @@ class ClientSerializer(serializers.ModelSerializer):
     phone_number = serializers.IntegerField(max_value=79999999999, min_value=70000000000)
     mobile_operator_code = serializers.IntegerField(max_value=9999, min_value=0)
 
+    def create(self, validated_data):
+        obj, created = Client.objects.get_or_create(
+            phone_number=validated_data['phone_number'],
+            defaults=validated_data
+        )
+        if not created:
+            raise serializers.ValidationError('Такой пользователь уже есть')
+        return obj
+    
     def validate(self, data):
         phone_number = str(data['phone_number'])
         mobile_operator_code = str(data['mobile_operator_code'])
